@@ -1,0 +1,4 @@
+
+*.yaml
+*serviceWorker.js
+*.svg

@@ -1,0 +1,25 @@
+.BoardPage {
+    align-items: center;
+    display: grid;
+    grid: auto 1fr auto/ 1fr;
+    height: inherit;
+    justify-items: center;
+    overflow: hidden;
+    padding: 2rem 0;
+    position: relative;
+    width: inherit;
+
+    h1 {
+        animation-duration: 750ms;
+        animation-name: fadeIn;
+        margin-top: 3rem;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

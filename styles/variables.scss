@@ -1,0 +1,25 @@
+:root {
+    --body-gradient: linear-gradient(180deg, #627a96 0%, #83b5c5 19.47%, #8dc7d4 39.07%, #93d2dc 82.24%, #95d6df 100%);
+    --body-bg-backup: #93d2dc;
+    --body-text: #201238;
+    --parent-gradient: linear-gradient(
+        0deg,
+        #95d6df -27.48%,
+        #93d2dc -12.56%,
+        #8dc7d4 0.91%,
+        #83b5c5 13.82%,
+        #749bb1 26.38%,
+        #627a96 38.69%,
+        #4c415f 50.82%,
+        #36294b 62.57%,
+        #201238 66.23%
+    );
+    --winner: #5cb85c;
+    --board-border: 5px solid #7e7e7e;
+    --button-hover: #282d4fa8;
+    --button: #201238;
+    --button-text: #ffffff;
+    --choice-border: 5px solid #d8d8d8;
+    --choice-border-hover: 5px solid var(--winner);
+    --board-border-hover: 2px solid #7e7e7e;
+}

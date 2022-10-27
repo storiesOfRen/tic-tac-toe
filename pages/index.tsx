@@ -1,8 +1,10 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Layout from '@/components/layout';
+import WelcomePage from '@/components/welcome';
 
-export default function WelcomeScreen(){
-  return <></>
+export default function WelcomeScreen() {
+    return (
+        <Layout>
+            <WelcomePage />
+        </Layout>
+    );
 }

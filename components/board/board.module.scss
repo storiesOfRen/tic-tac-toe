@@ -1,0 +1,117 @@
+@mixin MarkText {
+    font-family: 'Baskerville', serif;
+    font-size: 3rem;
+    width: 3.75rem;
+}
+
+@mixin SquareMarker {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: var(--WH);
+    text-align: center;
+    width: var(--WH);
+}
+
+@function getRightBoarder($index) {
+    $unset: none;
+    @if $index == 3 {
+        @return $unset;
+    }
+    @if $index == 6 {
+        @return $unset;
+    }
+    @if $index == 9 {
+        @return $unset;
+    }
+    $set: var(--board-border);
+    @return $set;
+}
+
+.Board {
+    $hoverChoice: #627a96;
+    --WH: 5rem;
+    align-self: flex-start;
+    animation-duration: 750ms;
+    animation-name: fadeIn;
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    margin: 2rem;
+    opacity: 1;
+
+    &_Square {
+        @include MarkText;
+
+        &_btn {
+            @include SquareMarker;
+
+            &:hover,
+            &:focus-visible,
+            &:focus {
+                background: lighten($hoverChoice, 0.85);
+                outline: none;
+            }
+        }
+
+        &_span {
+            @include MarkText;
+            @include SquareMarker;
+
+            cursor: not-allowed;
+        }
+    }
+}
+
+@for $i from 1 through 6 {
+    .Board_Square_btn:nth-child(#{$i}),
+    .Board_Square_span:nth-child(#{$i}) {
+        border-bottom: var(--board-border);
+    }
+}
+
+@for $i from 1 through 9 {
+    .Board_Square_btn:nth-child(#{$i}),
+    .Board_Square_span:nth-child(#{$i}) {
+        border-right: getRightBoarder($i);
+    }
+}
+
+.Waiting {
+    &_Heading {
+        margin-top: 3rem;
+        max-width: 20ch;
+        text-align: center;
+        text-transform: none;
+    }
+
+    &_Marks {
+        animation-duration: 1.25s;
+        animation-name: spinner;
+        animation-iteration-count: infinite;
+        & > span {
+            @include MarkText;
+
+            &:first-child {
+                margin-right: 5rem;
+            }
+        }
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap');
+
+@mixin LevelHeading {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+
+.Heading {
+    &_l1 {
+        @include LevelHeading;
+        font-weight: 400;
+        font-size: 1.125rem;
+    }
+
+    &_l2 {
+        @include LevelHeading;
+    }
+}
+.Body {
+    @include LevelHeading;
+    text-align: center;
+}
+.Logo {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.75rem;
+    color: #ffffff;
+
+    &_XO {
+        align-self: end;
+        font-size: 0.75rem;
+        font-weight: 300;
+    }
+}

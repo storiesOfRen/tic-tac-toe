@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
+@mixin General-Button {
+    width: 100%;
+    background: var(--button);
+    color: var(--button-text);
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    padding: 0.625rem 1.5rem;
+    text-transform: uppercase;
+    &:hover,
+    &:focus-visible,
+    &:focus {
+        outline: none;
+        background: var(--button-hover);
+    }
+}
+
+.MatchingLink {
+    justify-self: center;
+    width: 17rem;
+
+    &:focus,
+    &:focus-visible {
+        outline: none;
+        .MatchingBtn {
+            background: var(--button-hover);
+        }
+    }
+}
+
+.MatchingBtn {
+    @include General-Button;
+    text-decoration: none;
+}
+
+.BoardActionButtons {
+    @include General-Button;
+    border: none;
+    margin-bottom: 0.875rem;
+}
+
+.MarkerChoice {
+    background: transparent;
+    border: none;
+    border-bottom: var(--choice-border);
+    font-family: 'Baskerville', serif;
+    font-size: 3rem;
+    width: 3.75rem;
+
+    &:hover,
+    &:focus-visible,
+    &:focus {
+        border-bottom: var(--choice-border-hover);
+    }
+}

@@ -1,0 +1,23 @@
+.WelcomePage {
+    align-items: center;
+    display: grid;
+    grid: 2rem 6rem 50% auto/ 1fr;
+    height: inherit;
+    justify-items: center;
+    padding: 2rem 0;
+    width: inherit;
+
+    h2 {
+        align-self: flex-end;
+    }
+
+    &_Choices {
+        display: flex;
+        justify-content: space-between;
+        width: 12.5rem;
+    }
+
+    &_Match {
+        align-self: flex-end;
+    }
+}
